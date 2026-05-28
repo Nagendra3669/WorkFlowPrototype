@@ -1,32 +1,20 @@
 trigger:
-  - main
+- main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
-# Set AZURE_STORAGE_KEY as a secret pipeline variable in Azure DevOps.
-# The service principal has login permission, but blob operations use storage key auth here.
-variables:
-  storageAccountName: 'scazureproject'
-  containerName: 'web'
-   # AZURE_STORAGE_KEY must be configured as a secret pipeline variable in Azure DevOps.
 steps:
+
 - task: AzureCLI@2
-  displayName: 'Deploy to Azure Storage'
   inputs:
     azureSubscription: 'azure-first-project'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az storage container create \
-        --account-name $(storageAccountName) \
-        --name $(containerName) \
-        --auth-mode key \
-        --account-key $(AZURE_STORAGE_KEY)
       az storage blob upload-batch \
-        --account-name $(storageAccountName) \
-        --destination $(containerName) \
+        --account-name scazureproject \
+        --destination '$web' \
         --source . \
         --overwrite \
-        --auth-mode key \
-        --account-key $(AZURE_STORAGE_KEY)
+        --auth-mode login
