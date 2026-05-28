@@ -9,7 +9,7 @@ pool:
 variables:
   storageAccountName: 'scazureproject'
   containerName: 'web'
-  # AZURE_STORAGE_KEY must be configured as a secret pipeline variable in Azure DevOps.
+   # AZURE_STORAGE_KEY must be configured as a secret pipeline variable in Azure DevOps.
 steps:
 - task: AzureCLI@2
   displayName: 'Deploy to Azure Storage'
