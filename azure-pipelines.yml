@@ -14,7 +14,7 @@ steps:
     inlineScript: |
       az storage blob upload-batch \
         --account-name scazureproject \
+        --account-key $(AZURE_STORAGE_KEY) \
         --destination '$web' \
         --source . \
-        --overwrite \
-        --auth-mode login
+        --overwrite
