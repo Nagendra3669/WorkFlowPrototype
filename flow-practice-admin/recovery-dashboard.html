@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-practice">Practice Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="practice-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="patient-list.html" class="sidebar-link"><span class="sidebar-link-icon">&#128100;</span> Patient List</a>
+          <a href="patient-search.html" class="sidebar-link"><span class="sidebar-link-icon">&#128269;</span> Search & Lookup</a>
+          <a href="patient-status.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> Status Tracking</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Care Management</div>
+          <a href="care-coordinator.html" class="sidebar-link"><span class="sidebar-link-icon">&#129309;</span> Care Coordinators</a>
+          <a href="procedure-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127973;</span> Procedures</a>
+          <a href="care-pathway.html" class="sidebar-link"><span class="sidebar-link-icon">&#128204;</span> Care Pathways</a>
+          <a href="postop-checklist.html" class="sidebar-link"><span class="sidebar-link-icon">&#9745;</span> Post-Op Checklists</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Analytics</div>
+          <a href="recovery-dashboard.html" class="sidebar-link active"><span class="sidebar-link-icon">&#128170;</span> Recovery Dashboard</a>
+          <a href="reports.html" class="sidebar-link"><span class="sidebar-link-icon">&#128202;</span> Reports</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Recovery Dashboard</h1>
+        </div>
+        <div class="topbar-right">
+          <select class="form-select" style="width:auto;">
+            <option>Last 30 Days</option>
+            <option>Last 90 Days</option>
+            <option>This Year</option>
+          </select>
+          <div class="avatar" style="background:var(--flow-practice);">AM</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <!-- Recovery Stats -->
+        <div class="stat-grid" style="grid-template-columns:repeat(4, 1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Active Recovery Patients</div>
+            <div class="stat-value" style="color:var(--flow-practice);">89</div>
+            <div class="stat-delta positive">&#8593; 12 new this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg Pain Reduction</div>
+            <div class="stat-value" style="color:var(--success);">62%</div>
+            <div class="stat-delta positive">&#8593; From baseline</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Mobility Improvement</div>
+            <div class="stat-value" style="color:var(--info);">+41 pts</div>
+            <div class="stat-delta positive">Avg score increase</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Complication Rate</div>
+            <div class="stat-value" style="color:var(--destructive);">3.2%</div>
+            <div class="stat-delta positive">&#8595; Below target (&lt;5%)</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Recovery by Procedure -->
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Recovery by Procedure</h3><p class="card-subtitle">Average outcomes by surgery type</p></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.9rem;">
+                  <span style="font-weight:500;">Total Knee Replacement</span>
+                  <span style="font-weight:600;color:var(--success);">85% on track</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:999px;overflow:hidden;">
+                  <div style="width:85%;height:100%;background:var(--success);border-radius:999px;"></div>
+                </div>
+                <div style="font-size:0.8rem;color:var(--muted-foreground);margin-top:0.25rem;">48 patients &middot; Avg recovery: 10 weeks</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.9rem;">
+                  <span style="font-weight:500;">Hip Replacement</span>
+                  <span style="font-weight:600;color:var(--success);">91% on track</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:999px;overflow:hidden;">
+                  <div style="width:91%;height:100%;background:var(--success);border-radius:999px;"></div>
+                </div>
+                <div style="font-size:0.8rem;color:var(--muted-foreground);margin-top:0.25rem;">32 patients &middot; Avg recovery: 8 weeks</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.9rem;">
+                  <span style="font-weight:500;">Shoulder Replacement</span>
+                  <span style="font-weight:600;color:var(--warning);">72% on track</span>
+                </div>
+                <div style="height:8px;background:var(--border);border-radius:999px;overflow:hidden;">
+                  <div style="width:72%;height:100%;background:var(--warning);border-radius:999px;"></div>
+                </div>
+                <div style="font-size:0.8rem;color:var(--muted-foreground);margin-top:0.25rem;">9 patients &middot; Avg recovery: 14 weeks</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patients Needing Attention -->
+          <div class="card">
+            <div class="card-header">
+              <div><h3 class="card-title">Needs Attention</h3><p class="card-subtitle">Patients with recovery concerns</p></div>
+              <span class="status-badge status-cancelled"><span class="status-dot"></span> 5 Alerts</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div style="display:flex;align-items:center;gap:0.875rem;padding:0.875rem;background:#fee2e2;border-radius:var(--radius);">
+                <div class="avatar" style="background:#9f1239;">KL</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Karen Lewis - Pain Level 9/10</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Hip Replacement &middot; Day 13 &middot; Below expected progress</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Review</button>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.875rem;padding:0.875rem;background:#fef3c7;border-radius:var(--radius);">
+                <div class="avatar" style="background:#b45309;">TC</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Thomas Clark - Missed Check-in</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">TKR &middot; Day 21 &middot; No response for 5 days</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Contact</button>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.875rem;padding:0.875rem;background:#fef3c7;border-radius:var(--radius);">
+                <div class="avatar" style="background:#4338ca;">SW</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Susan Wright - Low Mobility Score</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">TKR &middot; Day 30 &middot; Score 35/100 (expected 60+)</div>
+                </div>
+                <button class="btn btn-sm btn-primary">Review</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROMS Summary -->
+        <div class="card" style="margin-top:1.5rem;">
+          <div class="card-header">
+            <div><h3 class="card-title">PROMIS Score Trends</h3><p class="card-subtitle">Patient-reported outcome measures over time</p></div>
+            <button class="btn btn-sm btn-outline">View Details</button>
+          </div>
+          <div class="grid-4" style="margin-top:1rem;">
+            <div style="text-align:center;padding:1rem;background:#f8fafc;border-radius:var(--radius);">
+              <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">Pre-Op Average</div>
+              <div style="font-size:1.5rem;font-weight:700;">42.3</div>
+              <div style="font-size:0.8rem;color:var(--destructive);">Below population norm</div>
+            </div>
+            <div style="text-align:center;padding:1rem;background:#f8fafc;border-radius:var(--radius);">
+              <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">6-Week Average</div>
+              <div style="font-size:1.5rem;font-weight:700;color:var(--warning);">58.7</div>
+              <div style="font-size:0.8rem;color:var(--warning);">Improving</div>
+            </div>
+            <div style="text-align:center;padding:1rem;background:#f8fafc;border-radius:var(--radius);">
+              <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">12-Week Average</div>
+              <div style="font-size:1.5rem;font-weight:700;color:var(--success);">71.2</div>
+              <div style="font-size:0.8rem;color:var(--success);">Near target</div>
+            </div>
+            <div style="text-align:center;padding:1rem;background:#f8fafc;border-radius:var(--radius);">
+              <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">6-Month Average</div>
+              <div style="font-size:1.5rem;font-weight:700;color:var(--success);">82.5</div>
+              <div style="font-size:0.8rem;color:var(--success);">Above target</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

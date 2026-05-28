@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Logs</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-super">Super Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="super-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="practice-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127981;</span> Practice Management</a>
+          <a href="user-roles.html" class="sidebar-link"><span class="sidebar-link-icon">&#128101;</span> User Roles</a>
+          <a href="content-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#128196;</span> Content Management</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">CMS & Compliance</div>
+          <a href="cms-submission.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> CMS Submission</a>
+          <a href="performance-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128200;</span> Performance</a>
+          <a href="audit-logs.html" class="sidebar-link active"><span class="sidebar-link-icon">&#128210;</span> Audit Logs</a>
+          <a href="system-settings.html" class="sidebar-link"><span class="sidebar-link-icon">&#9881;&#65039;</span> System Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Audit Logs</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="search-bar">
+            <span>&#128269;</span>
+            <input type="text" placeholder="Search logs...">
+          </div>
+          <button class="btn btn-outline">Export</button>
+          <div class="avatar" style="background:var(--flow-super);">SA</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>System Audit Trail</h1>
+          <p>Complete log of system activities and user actions</p>
+        </div>
+
+        <!-- Filters -->
+        <div style="display:flex;gap:0.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+          <select class="form-select" style="width:auto;min-width:140px;">
+            <option>All Actions</option>
+            <option>Login/Logout</option>
+            <option>Patient Data</option>
+            <option>User Management</option>
+            <option>Content Changes</option>
+            <option>CMS Submission</option>
+          </select>
+          <select class="form-select" style="width:auto;min-width:140px;">
+            <option>All Practices</option>
+            <option>Orthopedic Center</option>
+            <option>Metro Surgical</option>
+            <option>Summit Joint Care</option>
+          </select>
+          <select class="form-select" style="width:auto;min-width:140px;">
+            <option>All Users</option>
+            <option>Super Admins</option>
+            <option>Practice Admins</option>
+          </select>
+          <input type="date" class="form-input" style="width:auto;" value="2026-04-28">
+          <button class="btn btn-secondary">Filter</button>
+        </div>
+
+        <div class="card" style="padding:0;overflow:hidden;">
+          <table class="data-table">
+            <thead>
+              <tr><th>Timestamp</th><th>User</th><th>Practice</th><th>Action</th><th>Details</th><th>IP Address</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 28, 2026 10:32 AM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:var(--flow-super);">SA</div><span style="font-size:0.85rem;">Super Admin</span></div></td>
+                <td style="font-size:0.85rem;">All</td>
+                <td style="font-weight:500;font-size:0.85rem;">Content Published</td>
+                <td style="font-size:0.85rem;">Published new Pre-Op video to all practices</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.1.45</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 28, 2026 10:15 AM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:var(--flow-practice);">LT</div><span style="font-size:0.85rem;">Lisa Thompson</span></div></td>
+                <td style="font-size:0.85rem;">Orthopedic Center</td>
+                <td style="font-weight:500;font-size:0.85rem;">Patient Updated</td>
+                <td style="font-size:0.85rem;">Updated care notes for Patient P-28491</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.3.12</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 28, 2026 9:48 AM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm">SM</div><span style="font-size:0.85rem;">Dr. Mitchell</span></div></td>
+                <td style="font-size:0.85rem;">Orthopedic Center</td>
+                <td style="font-weight:500;font-size:0.85rem;">Wound Photo Reviewed</td>
+                <td style="font-size:0.85rem;">Reviewed and approved wound healing photo</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.3.28</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 28, 2026 9:30 AM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:var(--flow-practice);">AM</div><span style="font-size:0.85rem;">Admin User</span></div></td>
+                <td style="font-size:0.85rem;">Metro Surgical</td>
+                <td style="font-weight:500;font-size:0.85rem;">User Created</td>
+                <td style="font-size:0.85rem;">Created new care coordinator account</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.2.55</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 28, 2026 8:15 AM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:#0e7490;">MD</div><span style="font-size:0.85rem;">Mark Davis</span></div></td>
+                <td style="font-size:0.85rem;">Orthopedic Center</td>
+                <td style="font-weight:500;font-size:0.85rem;">Login</td>
+                <td style="font-size:0.85rem;">Successful login from web browser</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.3.45</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 27, 2026 11:45 PM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:#9f1239;">UK</div><span style="font-size:0.85rem;">Unknown</span></div></td>
+                <td style="font-size:0.85rem;">-</td>
+                <td style="font-weight:500;font-size:0.85rem;color:var(--destructive);">Login Failed</td>
+                <td style="font-size:0.85rem;">3 consecutive failed login attempts</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">203.45.12.88</td>
+                <td><span class="status-badge status-cancelled">Blocked</span></td>
+              </tr>
+              <tr>
+                <td style="font-size:0.85rem;white-space:nowrap;">Apr 27, 2026 5:20 PM</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem;"><div class="avatar avatar-sm" style="background:var(--flow-super);">SA</div><span style="font-size:0.85rem;">Super Admin</span></div></td>
+                <td style="font-size:0.85rem;">All</td>
+                <td style="font-weight:500;font-size:0.85rem;">CMS Export</td>
+                <td style="font-size:0.85rem;">Generated Q1 2026 CMS export file</td>
+                <td style="font-size:0.85rem;color:var(--muted-foreground);">192.168.1.45</td>
+                <td><span class="status-badge status-completed">Success</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;border-top:1px solid var(--border);">
+            <span style="font-size:0.85rem;color:var(--muted-foreground);">Showing 7 of 12,456 entries</span>
+            <div class="pagination">
+              <button class="page-btn">&larr;</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">&rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

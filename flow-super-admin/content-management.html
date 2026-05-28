@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Management</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-super">Super Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="super-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="practice-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127981;</span> Practice Management</a>
+          <a href="user-roles.html" class="sidebar-link"><span class="sidebar-link-icon">&#128101;</span> User Roles</a>
+          <a href="content-management.html" class="sidebar-link active"><span class="sidebar-link-icon">&#128196;</span> Content Management</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">CMS & Compliance</div>
+          <a href="cms-submission.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> CMS Submission</a>
+          <a href="performance-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128200;</span> Performance</a>
+          <a href="audit-logs.html" class="sidebar-link"><span class="sidebar-link-icon">&#128210;</span> Audit Logs</a>
+          <a href="system-settings.html" class="sidebar-link"><span class="sidebar-link-icon">&#9881;&#65039;</span> System Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Content Management</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-primary">+ Add Content</button>
+          <div class="avatar" style="background:var(--flow-super);">SA</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Standardized Content Library</h1>
+          <p>Manage educational materials, consent forms, and communication templates</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active">Education (18)</button>
+          <button class="tab">Consent Forms (6)</button>
+          <button class="tab">Communication (12)</button>
+          <button class="tab">Checklists (8)</button>
+        </div>
+
+        <div class="tab-container">
+          <div class="tab-panel active">
+            <div class="grid-3">
+              <div class="card">
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                  <div class="feature-icon teal">&#127910;</div>
+                  <div>
+                    <h4 style="font-weight:600;">TKR Education Video</h4>
+                    <div style="font-size:0.8rem;color:var(--muted-foreground);">Duration: 12:34</div>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem;color:var(--muted-foreground);margin-bottom:1rem;">Comprehensive guide for total knee replacement patients covering pre-op preparation and post-op expectations.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--muted-foreground);">
+                  <span>Used by 10 practices</span>
+                  <span>Updated Apr 15</span>
+                </div>
+              </div>
+              <div class="card">
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                  <div class="feature-icon teal">&#127910;</div>
+                  <div>
+                    <h4 style="font-weight:600;">Home Preparation Guide</h4>
+                    <div style="font-size:0.8rem;color:var(--muted-foreground);">Duration: 18:45</div>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem;color:var(--muted-foreground);margin-bottom:1rem;">Essential home safety modifications and preparation tips for post-surgery recovery.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--muted-foreground);">
+                  <span>Used by 10 practices</span>
+                  <span>Updated Mar 22</span>
+                </div>
+              </div>
+              <div class="card">
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                  <div class="feature-icon teal">&#128214;</div>
+                  <div>
+                    <h4 style="font-weight:600;">Physical Therapy Guide</h4>
+                    <div style="font-size:0.8rem;color:var(--muted-foreground);">PDF &middot; 24 pages</div>
+                  </div>
+                </div>
+                <p style="font-size:0.85rem;color:var(--muted-foreground);margin-bottom:1rem;">Exercise protocols and rehabilitation timeline for optimal recovery outcomes.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--muted-foreground);">
+                  <span>Used by 8 practices</span>
+                  <span>Updated Apr 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Form Name</th><th>Type</th><th>Version</th><th>Last Updated</th><th>Practices Using</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight:500;">Surgical Consent - TKR</td>
+                    <td>Digital</td>
+                    <td>v2.3</td>
+                    <td>Apr 10, 2026</td>
+                    <td>10</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Anesthesia Consent</td>
+                    <td>Digital</td>
+                    <td>v1.8</td>
+                    <td>Mar 15, 2026</td>
+                    <td>10</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Blood Transfusion Consent</td>
+                    <td>Digital</td>
+                    <td>v1.5</td>
+                    <td>Mar 15, 2026</td>
+                    <td>8</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Template Name</th><th>Channel</th><th>Last Updated</th><th>Usage</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight:500;">Appointment Reminder</td>
+                    <td>SMS / Email</td>
+                    <td>Apr 20, 2026</td>
+                    <td>2,451 sent</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Pre-Op Checklist Reminder</td>
+                    <td>Push / Email</td>
+                    <td>Apr 18, 2026</td>
+                    <td>876 sent</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Care Coordinator Intro</td>
+                    <td>Email</td>
+                    <td>Mar 30, 2026</td>
+                    <td>342 sent</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Checklist Name</th><th>Type</th><th>Items</th><th>Last Updated</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight:500;">Pre-Op Readiness</td>
+                    <td>Standard</td>
+                    <td>24 items</td>
+                    <td>Apr 12, 2026</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Post-Op Week 1</td>
+                    <td>Standard</td>
+                    <td>18 items</td>
+                    <td>Apr 12, 2026</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight:500;">Post-Op Week 2-4</td>
+                    <td>Standard</td>
+                    <td>15 items</td>
+                    <td>Mar 28, 2026</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

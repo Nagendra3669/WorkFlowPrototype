@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post-Op Checklists</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-practice">Practice Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="practice-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="patient-list.html" class="sidebar-link"><span class="sidebar-link-icon">&#128100;</span> Patient List</a>
+          <a href="patient-search.html" class="sidebar-link"><span class="sidebar-link-icon">&#128269;</span> Search & Lookup</a>
+          <a href="patient-status.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> Status Tracking</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Care Management</div>
+          <a href="care-coordinator.html" class="sidebar-link"><span class="sidebar-link-icon">&#129309;</span> Care Coordinators</a>
+          <a href="procedure-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127973;</span> Procedures</a>
+          <a href="care-pathway.html" class="sidebar-link"><span class="sidebar-link-icon">&#128204;</span> Care Pathways</a>
+          <a href="postop-checklist.html" class="sidebar-link active"><span class="sidebar-link-icon">&#9745;</span> Post-Op Checklists</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Analytics</div>
+          <a href="recovery-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128170;</span> Recovery Dashboard</a>
+          <a href="reports.html" class="sidebar-link"><span class="sidebar-link-icon">&#128202;</span> Reports</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Post-Op Checklists</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="avatar" style="background:var(--flow-practice);">AM</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Post-Operative Checklist Review</h1>
+          <p>Review and verify patient post-operative care completion</p>
+        </div>
+
+        <div class="tabs">
+          <button class="tab active">Pending Review (8)</button>
+          <button class="tab">Completed (45)</button>
+          <button class="tab">Overdue (3)</button>
+        </div>
+
+        <div class="tab-container">
+          <div class="tab-panel active">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Patient</th><th>Procedure</th><th>Surgery Date</th><th>Days Post-Op</th><th>Checklist Items</th><th>Completion</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div style="display:flex;align-items:center;gap:0.75rem;"><div class="avatar" style="background:#9f1239;">KL</div><span style="font-weight:500;">Karen Lewis</span></div></td>
+                    <td>Hip Replacement</td>
+                    <td>Apr 15, 2026</td>
+                    <td>13 days</td>
+                    <td>18/24</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <div style="width:60px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;"><div style="width:75%;height:100%;background:var(--warning);border-radius:999px;"></div></div>
+                        <span style="font-size:0.8rem;">75%</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-sm btn-primary">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td><div style="display:flex;align-items:center;gap:0.75rem;"><div class="avatar" style="background:#065f46;">JR</div><span style="font-weight:500;">James Rodriguez</span></div></td>
+                    <td>Total Knee Replacement</td>
+                    <td>Apr 10, 2026</td>
+                    <td>18 days</td>
+                    <td>22/24</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <div style="width:60px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;"><div style="width:92%;height:100%;background:var(--success);border-radius:999px;"></div></div>
+                        <span style="font-size:0.8rem;">92%</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-sm btn-primary">Review</button></td>
+                  </tr>
+                  <tr>
+                    <td><div style="display:flex;align-items:center;gap:0.75rem;"><div class="avatar" style="background:#7c3aed;">LA</div><span style="font-weight:500;">Lisa Anderson</span></div></td>
+                    <td>Total Knee Replacement</td>
+                    <td>Apr 20, 2026</td>
+                    <td>8 days</td>
+                    <td>12/24</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <div style="width:60px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;"><div style="width:50%;height:100%;background:var(--warning);border-radius:999px;"></div></div>
+                        <span style="font-size:0.8rem;">50%</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-sm btn-primary">Review</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <div class="card">
+              <div class="empty-state">
+                <div class="empty-state-icon">&#9989;</div>
+                <h3>45 Completed Checklists</h3>
+                <p>All post-operative checklists have been reviewed and completed</p>
+                <button class="btn btn-outline">Export History</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel">
+            <div class="card" style="padding:0;overflow:hidden;">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Patient</th><th>Procedure</th><th>Surgery Date</th><th>Overdue Item</th><th>Days Overdue</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div style="display:flex;align-items:center;gap:0.75rem;"><div class="avatar" style="background:#b45309;">TC</div><span style="font-weight:500;">Thomas Clark</span></div></td>
+                    <td>Total Knee Replacement</td>
+                    <td>Apr 5, 2026</td>
+                    <td>PROMS Assessment</td>
+                    <td><span style="color:var(--destructive);font-weight:600;">5 days</span></td>
+                    <td><button class="btn btn-sm btn-primary">Follow Up</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

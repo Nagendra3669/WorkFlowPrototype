@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Dashboard</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-practice">Practice Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="practice-dashboard.html" class="sidebar-link active"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="patient-list.html" class="sidebar-link"><span class="sidebar-link-icon">&#128100;</span> Patient List</a>
+          <a href="patient-search.html" class="sidebar-link"><span class="sidebar-link-icon">&#128269;</span> Search & Lookup</a>
+          <a href="patient-status.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> Status Tracking</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Care Management</div>
+          <a href="care-coordinator.html" class="sidebar-link"><span class="sidebar-link-icon">&#129309;</span> Care Coordinators</a>
+          <a href="procedure-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127973;</span> Procedures</a>
+          <a href="care-pathway.html" class="sidebar-link"><span class="sidebar-link-icon">&#128204;</span> Care Pathways</a>
+          <a href="postop-checklist.html" class="sidebar-link"><span class="sidebar-link-icon">&#9745;</span> Post-Op Checklists</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Analytics</div>
+          <a href="recovery-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128170;</span> Recovery Dashboard</a>
+          <a href="reports.html" class="sidebar-link"><span class="sidebar-link-icon">&#128202;</span> Reports</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Practice Dashboard</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="search-bar">
+            <span>&#128269;</span>
+            <input type="text" placeholder="Search patients...">
+          </div>
+          <button class="btn btn-ghost btn-icon notification-badge">&#128276;</button>
+          <div class="avatar" style="background:var(--flow-practice);">AM</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Orthopedic Center of Excellence</h1>
+          <p>Daily overview of patient care operations and metrics</p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="stat-grid" style="grid-template-columns:repeat(5, 1fr);">
+          <div class="stat-card">
+            <div class="stat-label">Total Patients</div>
+            <div class="stat-value">248</div>
+            <div class="stat-delta positive">&#8593; 12 this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pre-Op Active</div>
+            <div class="stat-value" style="color:var(--info);">67</div>
+            <div class="stat-delta">Currently onboarding</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Post-Op Recovery</div>
+            <div class="stat-value" style="color:var(--warning);">89</div>
+            <div class="stat-delta">Under monitoring</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Surgeries Today</div>
+            <div class="stat-value" style="color:var(--flow-practice);">8</div>
+            <div class="stat-delta">3 completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pending Tasks</div>
+            <div class="stat-value" style="color:var(--destructive);">23</div>
+            <div class="stat-delta negative">Requires attention</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Today's Schedule -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Today's Schedule</h3>
+                <p class="card-subtitle">Monday, April 28, 2026</p>
+              </div>
+              <a href="procedure-management.html" class="btn btn-sm btn-outline">View All</a>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div style="display:flex;align-items:center;gap:1rem;padding:0.875rem;background:#f0fdf4;border-radius:var(--radius);border-left:3px solid var(--success);">
+                <div style="font-size:0.85rem;font-weight:600;color:var(--muted-foreground);min-width:60px;">7:30 AM</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">John Doe - Total Knee Replacement</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Dr. Mitchell &middot; OR Suite 3</div>
+                </div>
+                <span class="status-badge status-completed">Completed</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem;padding:0.875rem;background:#f0fdf4;border-radius:var(--radius);border-left:3px solid var(--success);">
+                <div style="font-size:0.85rem;font-weight:600;color:var(--muted-foreground);min-width:60px;">9:00 AM</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Mary Johnson - Hip Replacement</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Dr. Wilson &middot; OR Suite 2</div>
+                </div>
+                <span class="status-badge status-completed">Completed</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem;padding:0.875rem;background:#fffbeb;border-radius:var(--radius);border-left:3px solid var(--warning);">
+                <div style="font-size:0.85rem;font-weight:600;color:var(--muted-foreground);min-width:60px;">11:00 AM</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Robert Chen - Shoulder Replacement</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Dr. Chen &middot; OR Suite 1</div>
+                </div>
+                <span class="status-badge status-active">In Progress</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem;padding:0.875rem;border:1px solid var(--border);border-radius:var(--radius);border-left:3px solid var(--border);">
+                <div style="font-size:0.85rem;font-weight:600;color:var(--muted-foreground);min-width:60px;">2:00 PM</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">Susan Williams - Knee Arthroscopy</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Dr. Mitchell &middot; OR Suite 3</div>
+                </div>
+                <span class="status-badge status-pending">Scheduled</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem;padding:0.875rem;border:1px solid var(--border);border-radius:var(--radius);border-left:3px solid var(--border);">
+                <div style="font-size:0.85rem;font-weight:600;color:var(--muted-foreground);min-width:60px;">4:00 PM</div>
+                <div style="flex:1;">
+                  <div style="font-weight:600;">David Park - Total Knee Replacement</div>
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);">Dr. Wilson &middot; OR Suite 2</div>
+                </div>
+                <span class="status-badge status-pending">Scheduled</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alerts & Notifications -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Alerts & Notifications</h3>
+                <p class="card-subtitle">Items requiring attention</p>
+              </div>
+              <span style="background:var(--destructive);color:#fff;padding:0.2rem 0.6rem;border-radius:999px;font-size:0.75rem;font-weight:600;">5 New</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              <div class="alert alert-warning" style="margin-bottom:0;">
+                <span>&#9888;&#65039;</span>
+                <div>
+                  <div style="font-weight:600;">Missing Consent Form</div>
+                  <div style="font-size:0.8rem;">Patient David Park has not completed digital consent - Surgery scheduled for 4:00 PM</div>
+                </div>
+              </div>
+              <div class="alert alert-warning" style="margin-bottom:0;background:#fee2e2;color:#991b1b;border-color:#fecaca;">
+                <span>&#128293;</span>
+                <div>
+                  <div style="font-weight:600;">Escalation Alert</div>
+                  <div style="font-size:0.8rem;">Patient Karen Lewis reported pain level 9/10 - Follow-up required</div>
+                </div>
+              </div>
+              <div class="alert alert-info" style="margin-bottom:0;">
+                <span>&#8505;&#65039;</span>
+                <div>
+                  <div style="font-weight:600;">PROMS Assessment Due</div>
+                  <div style="font-size:0.8rem;">3 patients have pending outcome assessments for this week</div>
+                </div>
+              </div>
+              <div class="alert alert-success" style="margin-bottom:0;">
+                <span>&#9989;</span>
+                <div>
+                  <div style="font-weight:600;">Clearance Received</div>
+                  <div style="font-size:0.8rem;">Cardiology clearance received for Patient James Rodriguez</div>
+                </div>
+              </div>
+              <div class="alert alert-info" style="margin-bottom:0;">
+                <span>&#128100;</span>
+                <div>
+                  <div style="font-weight:600;">New Patient Registration</div>
+                  <div style="font-size:0.8rem;">Lisa Anderson completed registration - Assign care coordinator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <h3 style="margin:1.5rem 0 1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted-foreground);">Quick Actions</h3>
+        <div class="grid-4">
+          <a href="patient-list.html" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">&#128100;</div>
+            <div style="font-weight:600;margin-bottom:0.25rem;">View Patient List</div>
+            <div style="font-size:0.8rem;color:var(--muted-foreground);">248 total patients</div>
+          </a>
+          <a href="care-coordinator.html" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">&#129309;</div>
+            <div style="font-weight:600;margin-bottom:0.25rem;">Assign Coordinator</div>
+            <div style="font-size:0.8rem;color:var(--muted-foreground);">5 unassigned patients</div>
+          </a>
+          <a href="postop-checklist.html" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">&#9745;</div>
+            <div style="font-weight:600;margin-bottom:0.25rem;">Post-Op Checklists</div>
+            <div style="font-size:0.8rem;color:var(--muted-foreground);">12 pending reviews</div>
+          </a>
+          <a href="reports.html" class="card" style="text-align:center;text-decoration:none;color:inherit;">
+            <div style="font-size:2rem;margin-bottom:0.75rem;">&#128202;</div>
+            <div style="font-weight:600;margin-bottom:0.25rem;">View Reports</div>
+            <div style="font-size:0.8rem;color:var(--muted-foreground);">Monthly analytics</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Search & Lookup</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-practice">Practice Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="practice-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="patient-list.html" class="sidebar-link"><span class="sidebar-link-icon">&#128100;</span> Patient List</a>
+          <a href="patient-search.html" class="sidebar-link active"><span class="sidebar-link-icon">&#128269;</span> Search & Lookup</a>
+          <a href="patient-status.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> Status Tracking</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Care Management</div>
+          <a href="care-coordinator.html" class="sidebar-link"><span class="sidebar-link-icon">&#129309;</span> Care Coordinators</a>
+          <a href="procedure-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127973;</span> Procedures</a>
+          <a href="care-pathway.html" class="sidebar-link"><span class="sidebar-link-icon">&#128204;</span> Care Pathways</a>
+          <a href="postop-checklist.html" class="sidebar-link"><span class="sidebar-link-icon">&#9745;</span> Post-Op Checklists</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Analytics</div>
+          <a href="recovery-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128170;</span> Recovery Dashboard</a>
+          <a href="reports.html" class="sidebar-link"><span class="sidebar-link-icon">&#128202;</span> Reports</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Patient Search & Lookup</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="avatar" style="background:var(--flow-practice);">AM</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <!-- Search Box -->
+        <div class="card" style="text-align:center;padding:2.5rem;margin-bottom:1.5rem;">
+          <h2 style="margin-bottom:0.5rem;">Find Patient</h2>
+          <p style="color:var(--muted-foreground);margin-bottom:1.5rem;">Search by name, patient ID, phone number, or date of birth</p>
+          <div style="max-width:600px;margin:0 auto;display:flex;gap:0.75rem;">
+            <input type="text" class="form-input" placeholder="Enter search term..." style="font-size:1rem;padding:0.75rem 1rem;">
+            <button class="btn btn-primary btn-lg">Search</button>
+          </div>
+          <div style="display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;font-size:0.85rem;color:var(--muted-foreground);">
+            <span>Try: "John Doe"</span>
+            <span>&#8226;</span>
+            <span>"P-28491"</span>
+            <span>&#8226;</span>
+            <span>"(555) 123-4567"</span>
+            <span>&#8226;</span>
+            <span>"03/15/1960"</span>
+          </div>
+        </div>
+
+        <!-- Advanced Filters -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;cursor:pointer;" onclick="$('#advancedFilters').toggle()">
+            <span style="font-weight:600;">Advanced Filters</span>
+            <span style="color:var(--muted-foreground);">&#9662;</span>
+          </div>
+          <div id="advancedFilters" style="display:none;">
+            <div class="grid-4">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" placeholder="First name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" placeholder="Last name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Patient ID</label>
+                <input type="text" class="form-input" placeholder="e.g., P-28491">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" placeholder="(555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                  <option>Any</option>
+                  <option>Pre-Op</option>
+                  <option>Scheduled</option>
+                  <option>Post-Op</option>
+                  <option>Completed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Procedure</label>
+                <select class="form-select">
+                  <option>Any</option>
+                  <option>Total Knee Replacement</option>
+                  <option>Hip Replacement</option>
+                  <option>Shoulder Replacement</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Surgeon</label>
+                <select class="form-select">
+                  <option>Any</option>
+                  <option>Dr. Mitchell</option>
+                  <option>Dr. Wilson</option>
+                  <option>Dr. Chen</option>
+                </select>
+              </div>
+            </div>
+            <div style="display:flex;gap:0.75rem;margin-top:1rem;">
+              <button class="btn btn-primary">Apply Filters</button>
+              <button class="btn btn-secondary">Clear All</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Search Results (Demo) -->
+        <h3 style="margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted-foreground);">Recent Searches</h3>
+        <div class="grid-3">
+          <div class="card" style="display:flex;align-items:center;gap:1rem;cursor:pointer;" onclick="showToast('Loading patient profile...', 'info')">
+            <div class="avatar">JD</div>
+            <div>
+              <div style="font-weight:600;">John Doe</div>
+              <div style="font-size:0.8rem;color:var(--muted-foreground);">P-28491 &middot; Pre-Op &middot; TKR</div>
+            </div>
+          </div>
+          <div class="card" style="display:flex;align-items:center;gap:1rem;cursor:pointer;" onclick="showToast('Loading patient profile...', 'info')">
+            <div class="avatar" style="background:#be185d;">MJ</div>
+            <div>
+              <div style="font-weight:600;">Mary Johnson</div>
+              <div style="font-size:0.8rem;color:var(--muted-foreground);">P-28492 &middot; Scheduled &middot; Hip</div>
+            </div>
+          </div>
+          <div class="card" style="display:flex;align-items:center;gap:1rem;cursor:pointer;" onclick="showToast('Loading patient profile...', 'info')">
+            <div class="avatar" style="background:#0e7490;">DP</div>
+            <div>
+              <div style="font-weight:600;">David Park</div>
+              <div style="font-size:0.8rem;color:var(--muted-foreground);">P-28495 &middot; Pre-Op &middot; TKR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

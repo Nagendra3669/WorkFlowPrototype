@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery Progress</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-patient">Patient Flow</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Main</div>
+          <a href="portal-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="patient-registration.html" class="sidebar-link"><span class="sidebar-link-icon">&#128221;</span> Registration</a>
+          <a href="emergency-contact.html" class="sidebar-link"><span class="sidebar-link-icon">&#128657;</span> Emergency Contact</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Pre-Op</div>
+          <a href="digital-consent.html" class="sidebar-link"><span class="sidebar-link-icon">&#128275;</span> Digital Consent</a>
+          <a href="document-upload.html" class="sidebar-link"><span class="sidebar-link-icon">&#128193;</span> Documents</a>
+          <a href="communication-preferences.html" class="sidebar-link"><span class="sidebar-link-icon">&#128172;</span> Preferences</a>
+          <a href="preop-education.html" class="sidebar-link"><span class="sidebar-link-icon">&#127891;</span> Education</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Recovery</div>
+          <a href="pain-mobility.html" class="sidebar-link"><span class="sidebar-link-icon">&#128200;</span> Pain & Mobility</a>
+          <a href="recovery-progress.html" class="sidebar-link active"><span class="sidebar-link-icon">&#128170;</span> Recovery Progress</a>
+          <a href="secure-messaging.html" class="sidebar-link"><span class="sidebar-link-icon">&#9993;</span> Messages</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">Recovery Progress</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="status-badge status-active"><span class="status-dot"></span> Post-Op Week 2</span>
+          <div class="avatar">JD</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <!-- Recovery Milestones -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <h3 class="card-title">Recovery Milestones</h3>
+            <span style="font-size:0.85rem;color:var(--muted-foreground);">Surgery: May 15, 2026</span>
+          </div>
+          <div style="display:flex;gap:1rem;overflow-x:auto;padding-bottom:0.5rem;">
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--success);border-radius:var(--radius);background:#f0fdf4;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#9989;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--success);">Surgery Completed</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">May 15</div>
+            </div>
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--success);border-radius:var(--radius);background:#f0fdf4;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#9989;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--success);">First Walk</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">May 16</div>
+            </div>
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--success);border-radius:var(--radius);background:#f0fdf4;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#9989;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--success);">Discharged</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">May 17</div>
+            </div>
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--primary);border-radius:var(--radius);background:#f8fafc;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#128170;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--primary);">PT Session 3</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">In Progress</div>
+            </div>
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--border);border-radius:var(--radius);opacity:0.6;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#128694;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--muted-foreground);">Unaided Walking</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">Week 4-6</div>
+            </div>
+            <div style="min-width:140px;text-align:center;padding:1rem;border:2px solid var(--border);border-radius:var(--radius);opacity:0.6;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#127939;</div>
+              <div style="font-size:0.8rem;font-weight:600;color:var(--muted-foreground);">Full Recovery</div>
+              <div style="font-size:0.75rem;color:var(--muted-foreground);margin-top:0.25rem;">3-6 Months</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Recovery Checklist -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Recovery Checklist</h3>
+                <p class="card-subtitle">Week 1-2 post-surgery tasks</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.75rem;">
+                <span style="font-size:0.85rem;color:var(--muted-foreground);">Progress</span>
+                <div style="width:80px;height:6px;background:var(--border);border-radius:999px;overflow:hidden;">
+                  <div class="progress-fill" style="width:60%;height:100%;background:var(--success);border-radius:999px;"></div>
+                </div>
+                <span class="progress-text" style="font-size:0.8rem;font-weight:600;">60%</span>
+              </div>
+            </div>
+            <div class="checklist">
+              <div class="checklist-item completed">
+                <div class="check-box">&#10003;</div>
+                <div><div style="font-weight:500;">Take medications as prescribed</div><div style="font-size:0.8rem;color:var(--muted-foreground);">Daily - Pain meds, blood thinner</div></div>
+              </div>
+              <div class="checklist-item completed">
+                <div class="check-box">&#10003;</div>
+                <div><div style="font-weight:500;">Ice and elevate leg</div><div style="font-size:0.8rem;color:var(--muted-foreground);">3-4 times daily for 20 minutes</div></div>
+              </div>
+              <div class="checklist-item completed">
+                <div class="check-box">&#10003;</div>
+                <div><div style="font-weight:500;">Perform ankle pumps hourly</div><div style="font-size:0.8rem;color:var(--muted-foreground);">Prevents blood clots</div></div>
+              </div>
+              <div class="checklist-item">
+                <div class="check-box"></div>
+                <div><div style="font-weight:500;">Complete daily PT exercises</div><div style="font-size:0.8rem;color:var(--muted-foreground);">Assigned by therapist Lisa</div></div>
+              </div>
+              <div class="checklist-item">
+                <div class="check-box"></div>
+                <div><div style="font-weight:500;">Log pain and mobility scores</div><div style="font-size:0.8rem;color:var(--muted-foreground);">Track in Pain & Mobility section</div></div>
+              </div>
+              <div class="checklist-item">
+                <div class="check-box"></div>
+                <div><div style="font-weight:500;">Attend follow-up appointment</div><div style="font-size:0.8rem;color:var(--muted-foreground);">Scheduled for May 29</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wound Healing -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Wound Healing</h3>
+                <p class="card-subtitle">Incision site monitoring</p>
+              </div>
+              <span class="status-badge status-active"><span class="status-dot"></span> Healing Well</span>
+            </div>
+            <div style="padding:1rem 0;">
+              <div style="display:flex;gap:1rem;margin-bottom:1.5rem;">
+                <div style="flex:1;background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center;">
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">Incision Appearance</div>
+                  <div style="font-size:1.1rem;font-weight:600;color:var(--success);">Clean & Dry</div>
+                </div>
+                <div style="flex:1;background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center;">
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">Drainage</div>
+                  <div style="font-size:1.1rem;font-weight:600;color:var(--success);">None</div>
+                </div>
+                <div style="flex:1;background:#f8fafc;border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center;">
+                  <div style="font-size:0.8rem;color:var(--muted-foreground);margin-bottom:0.5rem;">Stitches</div>
+                  <div style="font-size:1.1rem;font-weight:600;color:var(--info);">Dissolvable</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Upload Wound Photo</label>
+                <div style="border:2px dashed var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;cursor:pointer;" onclick="showToast('Photo upload opened', 'info')">
+                  <div style="font-size:1.5rem;margin-bottom:0.5rem;">&#128248;</div>
+                  <p style="font-size:0.85rem;font-weight:500;">Take or upload photo</p>
+                  <p style="font-size:0.75rem;color:var(--muted-foreground);">Weekly photo for care team review</p>
+                </div>
+              </div>
+              <div class="alert alert-success">
+                <span>&#9989;</span>
+                <span>Last wound photo reviewed by Dr. Mitchell on May 25. Healing progressing normally.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medication Tracker -->
+        <div class="card" style="margin-top:1.5rem;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Medication Adherence</h3>
+              <p class="card-subtitle">Track your daily medications</p>
+            </div>
+          </div>
+          <table class="data-table">
+            <thead><tr><th>Medication</th><th>Dosage</th><th>Frequency</th><th>Today</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:500;">Oxycodone</td><td>5mg</td><td>Every 6 hours</td>
+                <td><label class="toggle"><input type="checkbox" checked><span class="toggle-switch"></span></label></td>
+                <td><span class="status-badge status-completed">Taken</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:500;">Acetaminophen</td><td>500mg</td><td>Every 8 hours</td>
+                <td><label class="toggle"><input type="checkbox" checked><span class="toggle-switch"></span></label></td>
+                <td><span class="status-badge status-completed">Taken</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:500;">Aspirin</td><td>81mg</td><td>Once daily</td>
+                <td><label class="toggle"><input type="checkbox"><span class="toggle-switch"></span></label></td>
+                <td><span class="status-badge status-pending">Due</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight:500;">Stool Softener</td><td>100mg</td><td>Twice daily</td>
+                <td><label class="toggle"><input type="checkbox"><span class="toggle-switch"></span></label></td>
+                <td><span class="status-badge status-pending">Due</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;margin-top:1.5rem;">
+          <a href="pain-mobility.html" class="btn btn-secondary">&larr; Back</a>
+          <a href="secure-messaging.html" class="btn btn-primary">Go to Messages &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>

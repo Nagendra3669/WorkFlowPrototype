@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concierge Service - Workflow Prototype</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="landing-page">
+    <!-- Header -->
+    <header class="landing-header">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div style="width:32px;height:32px;background:var(--primary);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">C</div>
+        <span style="font-weight:700;font-size:1.1rem;">Concierge Service</span>
+      </div>
+      <div style="font-size:0.85rem;color:var(--muted-foreground);">Workflow Prototype v1.0</div>
+    </header>
+
+    <!-- Hero -->
+    <section class="landing-hero">
+      <h1>Workflow Screens</h1>
+      <p>Interactive prototype of the Concierge Service platform. Select a workflow below to explore the patient care journey, practice administration, and multi-practice management screens.</p>
+    </section>
+
+    <!-- Flow Cards -->
+    <section class="flow-cards">
+      <!-- Patient Flow -->
+      <a href="flow-patient/portal-dashboard.html" class="flow-card patient">
+        <div class="flow-card-icon">&#128104;&#8205;&#9877;&#65039;</div>
+        <h3>Patient Activities</h3>
+        <p>Patient portal experience covering registration, consent, pre-op education, recovery tracking, and secure communications.</p>
+        <ul class="flow-card-features">
+          <li><span style="color:var(--success);">&#10003;</span> Portal Dashboard</li>
+          <li><span style="color:var(--success);">&#10003;</span> Registration & Consent</li>
+          <li><span style="color:var(--success);">&#10003;</span> Pre-Op Education</li>
+          <li><span style="color:var(--success);">&#10003;</span> Recovery Tracking</li>
+          <li><span style="color:var(--success);">&#10003;</span> Secure Messaging</li>
+        </ul>
+        <div class="flow-card-footer">
+          Enter Flow &rarr;
+        </div>
+      </a>
+
+      <!-- Practice Admin Flow -->
+      <a href="flow-practice-admin/practice-dashboard.html" class="flow-card practice">
+        <div class="flow-card-icon">&#127973;</div>
+        <h3>Practice Admin</h3>
+        <p>Practice administration tools for patient management, care coordination, procedure tracking, and operational reporting.</p>
+        <ul class="flow-card-features">
+          <li><span style="color:var(--success);">&#10003;</span> Patient List & Search</li>
+          <li><span style="color:var(--success);">&#10003;</span> Status Tracking</li>
+          <li><span style="color:var(--success);">&#10003;</span> Care Coordination</li>
+          <li><span style="color:var(--success);">&#10003;</span> Procedure Management</li>
+          <li><span style="color:var(--success);">&#10003;</span> Reports & Insights</li>
+        </ul>
+        <div class="flow-card-footer">
+          Enter Flow &rarr;
+        </div>
+      </a>
+
+      <!-- Super Admin Flow -->
+      <a href="flow-super-admin/super-dashboard.html" class="flow-card super">
+        <div class="flow-card-icon">&#9881;&#65039;</div>
+        <h3>Super Admin</h3>
+        <p>Multi-practice management including practice onboarding, user roles, content management, and CMS outcomes submission.</p>
+        <ul class="flow-card-features">
+          <li><span style="color:var(--success);">&#10003;</span> Multi-Practice Dashboard</li>
+          <li><span style="color:var(--success);">&#10003;</span> Practice Management</li>
+          <li><span style="color:var(--success);">&#10003;</span> User Roles & Permissions</li>
+          <li><span style="color:var(--success);">&#10003;</span> CMS Submission</li>
+          <li><span style="color:var(--success);">&#10003;</span> Performance Analytics</li>
+        </ul>
+        <div class="flow-card-footer">
+          Enter Flow &rarr;
+        </div>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align:center;padding:2rem;font-size:0.8rem;color:var(--muted-foreground);border-top:1px solid var(--border);margin-top:auto;">
+      Concierge Service Workflow Prototype &middot; Built with HTML, CSS &amp; jQuery
+    </footer>
+  </div>
+</body>
+</html>

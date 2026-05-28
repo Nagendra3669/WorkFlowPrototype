@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Settings</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo"><div class="sidebar-logo-icon">C</div><span>Concierge</span></div>
+        <span class="sidebar-flow-badge badge-super">Super Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">Overview</div>
+          <a href="super-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#127968;</span> Dashboard</a>
+          <a href="practice-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#127981;</span> Practice Management</a>
+          <a href="user-roles.html" class="sidebar-link"><span class="sidebar-link-icon">&#128101;</span> User Roles</a>
+          <a href="content-management.html" class="sidebar-link"><span class="sidebar-link-icon">&#128196;</span> Content Management</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title">CMS & Compliance</div>
+          <a href="cms-submission.html" class="sidebar-link"><span class="sidebar-link-icon">&#128203;</span> CMS Submission</a>
+          <a href="performance-dashboard.html" class="sidebar-link"><span class="sidebar-link-icon">&#128200;</span> Performance</a>
+          <a href="audit-logs.html" class="sidebar-link"><span class="sidebar-link-icon">&#128210;</span> Audit Logs</a>
+          <a href="system-settings.html" class="sidebar-link active"><span class="sidebar-link-icon">&#9881;&#65039;</span> System Settings</a>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-link" style="padding:0.5rem 0;"><span class="sidebar-link-icon">&#8592;</span> Back to Flows</a>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="btn btn-ghost btn-icon" data-mobile-menu>&#9776;</button>
+          <h1 class="topbar-title">System Settings</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="avatar" style="background:var(--flow-super);">SA</div>
+        </div>
+      </div>
+
+      <div class="page-content">
+        <div class="page-header">
+          <h1>Platform Configuration</h1>
+          <p>Manage global system settings and integrations</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- General Settings -->
+          <div class="section-card">
+            <div class="section-card-header"><h3 class="card-title">General Settings</h3></div>
+            <div class="section-card-body">
+              <div class="form-group">
+                <label class="form-label">Platform Name</label>
+                <input type="text" class="form-input" value="Concierge Service Platform">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Default Time Zone</label>
+                <select class="form-select">
+                  <option>(UTC-06:00) Central Time</option>
+                  <option>(UTC-05:00) Eastern Time</option>
+                  <option>(UTC-08:00) Pacific Time</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Date Format</label>
+                <select class="form-select">
+                  <option>MM/DD/YYYY</option>
+                  <option>DD/MM/YYYY</option>
+                  <option>YYYY-MM-DD</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Enable patient portal</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Enable secure messaging</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Settings -->
+          <div class="section-card">
+            <div class="section-card-header"><h3 class="card-title">Security</h3></div>
+            <div class="section-card-body">
+              <div class="form-group">
+                <label class="form-label">Session Timeout (minutes)</label>
+                <input type="number" class="form-input" value="30">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Max Login Attempts</label>
+                <input type="number" class="form-input" value="5">
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Two-factor authentication (2FA)</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Require password change every 90 days</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Audit all user actions</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Integration Settings -->
+          <div class="section-card">
+            <div class="section-card-header"><h3 class="card-title">Integrations</h3></div>
+            <div class="section-card-body">
+              <div style="display:flex;flex-direction:column;gap:1.25rem;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;background:#f8fafc;border-radius:var(--radius);">
+                  <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <div style="font-size:1.5rem;">&#128248;</div>
+                    <div>
+                      <div style="font-weight:600;">Prama Collab</div>
+                      <div style="font-size:0.8rem;color:var(--muted-foreground);">Collaboration platform</div>
+                    </div>
+                  </div>
+                  <span class="status-badge status-active">Connected</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;background:#f8fafc;border-radius:var(--radius);">
+                  <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <div style="font-size:1.5rem;">&#128229;</div>
+                    <div>
+                      <div style="font-weight:600;">CMS Gateway</div>
+                      <div style="font-size:0.8rem;color:var(--muted-foreground);">Outcomes submission</div>
+                    </div>
+                  </div>
+                  <span class="status-badge status-active">Connected</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;background:#f8fafc;border-radius:var(--radius);">
+                  <div style="display:flex;align-items:center;gap:0.75rem;">
+                    <div style="font-size:1.5rem;">&#128232;</div>
+                    <div>
+                      <div style="font-weight:600;">SMS Provider</div>
+                      <div style="font-size:0.8rem;color:var(--muted-foreground);">Text messaging service</div>
+                    </div>
+                  </div>
+                  <span class="status-badge status-active">Connected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notification Settings -->
+          <div class="section-card">
+            <div class="section-card-header"><h3 class="card-title">System Notifications</h3></div>
+            <div class="section-card-body">
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>Login failure alerts</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>New practice onboarding alerts</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox" checked>
+                  <span class="toggle-switch"></span>
+                  <span>CMS submission deadline reminders</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="toggle">
+                  <input type="checkbox">
+                  <span class="toggle-switch"></span>
+                  <span>Weekly summary reports</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:0.75rem;margin-top:1.5rem;">
+          <button class="btn btn-secondary">Reset to Defaults</button>
+          <button class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/app.js"></script>
+</body>
+</html>
