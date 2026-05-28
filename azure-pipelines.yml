@@ -12,8 +12,14 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
+      az storage account show --name scazureproject --query name --output tsv
+      az storage container create \
+        --account-name scazureproject \
+        --name web \
+        --auth-mode login
       az storage blob upload-batch \
         --account-name scazureproject \
         --destination web \
         --source . \
-        --overwrite
+        --overwrite \
+        --auth-mode login
