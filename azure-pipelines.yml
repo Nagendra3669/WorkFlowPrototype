@@ -8,7 +8,7 @@ pool:
 # The service principal has login permission, but blob operations use storage key auth here.
 variables:
   storageAccountName: 'scazureproject'
-  containerName: '$web'
+  containerName: 'web'
    # AZURE_STORAGE_KEY must be configured as a secret pipeline variable in Azure DevOps.
 steps:
 - task: AzureCLI@2
