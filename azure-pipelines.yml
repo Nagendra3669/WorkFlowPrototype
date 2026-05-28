@@ -1,0 +1,46 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  storageAccountName: 'scazureproject'
+  containerName: 'web'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildStaticSite
+    steps:
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Build Artifacts'
+      inputs:
+        pathToPublish: '$(Build.SourcesDirectory)'
+        artifactName: 'static-site'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeployToBlobStorage
+    displayName: 'Deploy to Azure Blob Storage'
+    environment: 'Production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self
+          - task: AzureCLI@2
+            displayName: 'Deploy Files to Blob Storage'
+            inputs:
+              azureSubscription: '$(AZURE_SUBSCRIPTION)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az storage blob upload-batch \
+                  --account-name $(storageAccountName) \
+                  --destination $(containerName) \
+                  --source . \
+                  --overwrite
